@@ -56,7 +56,10 @@ export class Page2Component implements OnInit, OnDestroy {
   // To bind the context, this function should be an arrow function
   onConfirmClick = (): Observable<boolean> => {
     return this.asyncGuardApiService.getAsyncData().pipe(
-      map(() => true),
+      map(() => {
+        this.handleUnsavedChanges();
+        return true;
+      }),
       catchError((e: HttpErrorResponse) => {
         this.error = e?.message;
         return of(false);

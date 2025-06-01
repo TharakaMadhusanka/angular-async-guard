@@ -45,7 +45,10 @@ export class Page1Component implements CanDeactivateComponent {
    */
   onConfirmClick = (): Observable<boolean> => {
     return this.asyncGuardApiService.getAsyncData().pipe(
-      map(() => true),
+      map(() => {
+        this.hasUnsavedChanges();
+        return true;
+      }),
       catchError((e: HttpErrorResponse) => {
         this.error = e?.message;
         return of(false);
