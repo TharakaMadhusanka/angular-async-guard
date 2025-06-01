@@ -1,4 +1,6 @@
-<p-card>
+<p-card header="Page 1">
+  <p-message severity="info">Page 1 Component</p-message>
+  <br />
   <p-message severity="warn"
     >This is the page where we look for unsaved changes and trigger promp when
     user tries to leave</p-message
@@ -9,7 +11,7 @@
   >
   <br />
   <p-button primary (onClick)="isButtonClicked = !isButtonClicked"
-    >Toggle Button Change</p-button
+    >Toggle Page 1 Change</p-button
   >
   <br />
   <p-message *ngIf="error" severity="error">Error: {{ error }}</p-message>

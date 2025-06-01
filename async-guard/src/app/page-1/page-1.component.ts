@@ -24,7 +24,7 @@ import { MessageModule } from 'primeng/message';
  * instead of implementing CanDeactivate interface [which is used to reference the component directly], we can modify the same to
  * use with a STORE
  */
-export class Route1Component implements CanDeactivateComponent {
+export class Page1Component implements CanDeactivateComponent {
   constructor(private asyncGuardApiService: AsyncGuardApiService) {}
 
   isButtonClicked = false;

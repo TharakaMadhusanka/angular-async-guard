@@ -26,7 +26,7 @@ export class ConfirmationDialogService {
         closeOnEscape: true,
         icon: 'pi pi-exclamation-triangle',
         rejectButtonProps: {
-          label: 'Do Not Trigger',
+          label: 'Continue With No Action',
           severity: 'secondary',
           outlined: true,
         },
@@ -42,7 +42,7 @@ export class ConfirmationDialogService {
         reject: () => {
           this.showConfirmationDialog.next(false);
 
-          observer.next(false);
+          observer.next(true);
           observer.complete();
         },
       });
