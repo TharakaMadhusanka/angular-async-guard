@@ -20,6 +20,10 @@ import { MessageModule } from 'primeng/message';
   imports: [CommonModule, ButtonModule, CardModule, MessageModule],
   templateUrl: './page-1.component.html',
 })
+/**
+ * instead of implementing CanDeactivate interface, we can modify the same to
+ * use with a STORE
+ */
 export class Route1Component implements CanDeactivateComponent {
   constructor(private asyncGuardApiService: AsyncGuardApiService) {}
 

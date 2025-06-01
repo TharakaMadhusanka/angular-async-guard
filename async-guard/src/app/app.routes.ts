@@ -5,11 +5,13 @@ export const routes: Routes = [
   {
     path: 'page-1',
     canDeactivate: [canDeactivateGuard],
+    data: { moduleName: 'page-1' },
     loadComponent: () =>
       import('./page-1/page-1.component').then((m) => m.Route1Component),
   },
   {
     path: 'page-2',
+    data: { moduleName: 'page-2' },
     loadComponent: () =>
       import('./page-2/page-2.component').then((m) => m.Route2Component),
   },
