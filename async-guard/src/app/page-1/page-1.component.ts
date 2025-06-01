@@ -21,7 +21,7 @@ import { MessageModule } from 'primeng/message';
   templateUrl: './page-1.component.html',
 })
 /**
- * instead of implementing CanDeactivate interface, we can modify the same to
+ * instead of implementing CanDeactivate interface [which is used to reference the component directly], we can modify the same to
  * use with a STORE
  */
 export class Route1Component implements CanDeactivateComponent {
