@@ -5,7 +5,7 @@ Developed on,
 1. Angular V19
 2. Primeng V19
 
-Detailed guid you can find here medium article :hand: [Angular CanDeactivate: Unsaved Changes? Hold On!](https://www.example.com)
+Detailed guid you can find here medium article :hand: [Angular CanDeactivate: Unsaved Changes? Hold On!](https://medium.com/@tharaka-madhusanka/angular-candeactivate-unsaved-changes-hold-on-26e6fc33ea36)
 
 ## CanDeactivate Guard Approaches: A Comparison
 
