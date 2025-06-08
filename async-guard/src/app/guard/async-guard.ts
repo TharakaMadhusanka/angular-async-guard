@@ -11,7 +11,7 @@ import { ConfirmationDialogService } from '../service/confirmation-dialog.servic
 import { inject } from '@angular/core';
 import { ChangeMonitorService } from '../service/change-monitor.service';
 
-/** Here instead of using the Component Reference, we can modify to read the values from a STORE
+/** Here instead of using the Component Reference Interface, we can modify to read the values from a STORE
  * As in persist the UnsavedChanges state in a store and read it from there
  * Persist the onConfirmClick function in a store and read it from there
  * This way we can use the same CanDeactivate guard for multiple components
@@ -20,8 +20,10 @@ import { ChangeMonitorService } from '../service/change-monitor.service';
 export const canDeactivateGuardWithComponentReference: CanDeactivateFn<
   CanDeactivateComponent
 > = (component: CanDeactivateComponent): Observable<boolean> | boolean => {
+  // Inject the ConfirmationDialogService to show the confirmation dialog
+  // and execute the callback function if the user confirms
   const confirmationDialogService = inject(ConfirmationDialogService);
-  return component.hasUnsavedChanges()
+  return component.detectUnsavedChanges()
     ? confirmationDialogService.showConfirmationAndDoSomething(
         component.onConfirmClick
       )

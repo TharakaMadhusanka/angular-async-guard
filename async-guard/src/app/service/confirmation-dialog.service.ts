@@ -26,12 +26,12 @@ export class ConfirmationDialogService {
         closeOnEscape: true,
         icon: 'pi pi-exclamation-triangle',
         rejectButtonProps: {
-          label: 'Continue With No Action',
+          label: 'Discard Changes and Continue',
           severity: 'secondary',
           outlined: true,
         },
         acceptButtonProps: {
-          label: 'Trigger Component Function',
+          label: 'Save Changes and Continue',
         },
         accept: async () => {
           const resp = await firstValueFrom(callback());
@@ -41,7 +41,6 @@ export class ConfirmationDialogService {
         },
         reject: () => {
           this.showConfirmationDialog.next(false);
-
           observer.next(true);
           observer.complete();
         },

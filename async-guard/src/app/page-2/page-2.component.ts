@@ -34,7 +34,7 @@ export class Page2Component implements OnInit, OnDestroy {
   ngOnInit(): void {
     // Register the feature in the ChangeMonitorService when the component is initialized
     this.changeMonitorService.registerFeatureForChangeMonitoring(
-      'page-2',
+      'page-2', // Unique identifier for the feature, across the application [can be any string]
       this.onConfirmClick // This is a placeholder for the handler function, replace with actual logic if needed
     );
   }

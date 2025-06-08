@@ -34,7 +34,7 @@ export class Page1Component implements CanDeactivateComponent {
    * which is used to determine if there are unsaved changes
    * @returns {boolean} - true if there are unsaved changes, false otherwise
    * **/
-  hasUnsavedChanges(): boolean {
+  detectUnsavedChanges(): boolean {
     return this.isButtonClicked;
   }
 
@@ -44,9 +44,9 @@ export class Page1Component implements CanDeactivateComponent {
    * @returns {Observable<boolean>} - An observable that emits true if the operation is successful, or false if an error occurs.
    */
   onConfirmClick = (): Observable<boolean> => {
+    // Simulating an asynchronous operation, such as an API call
     return this.asyncGuardApiService.getAsyncData().pipe(
       map(() => {
-        this.hasUnsavedChanges();
         return true;
       }),
       catchError((e: HttpErrorResponse) => {
